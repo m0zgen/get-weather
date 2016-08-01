@@ -9,15 +9,18 @@
 # Get yandex weather xml
 curl -s https://export.yandex.ru/bar/reginfo.xml?region=Almaty > ya.xml && sed -i -n '/<day_part typeid=/,/<\/day_part>/p' ya.xml
 
+# Export data
 getdata() {
 	res=$(cat ya.xml | grep $1 | sed -e 's/<[^>]*>//g' | head -1 | tr -s " ")
 	echo $res
 }
 
+# Get data from source
 TYPE=$(getdata weather_type)
 TEMP=$(getdata temperature)
 CITY=$(getdata time_zone)
 
 echo "$CITY $TYPE $TEMP°"
 
+# Send to Telegram
 # curl -s --max-time 10 -d "chat_id=$CHATID&disable_web_page_preview=1&text=$RESULT" https://api.telegram.org/bot$KEY/sendMessage >/dev/null
