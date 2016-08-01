@@ -8,10 +8,10 @@
 			<wind_speed>0</wind_speed>
 			<wind_direction id="n">север</wind_direction>
 			<dampness>55</dampness>
-			<hectopascal>919</hectopascal>
-			<torr>689</torr>
-			<pressure>689</pressure>
-			<temperature class_name="t20" color="F8F4D0">+20</temperature>
+			<hectopascal>920</hectopascal>
+			<torr>690</torr>
+			<pressure>690</pressure>
+			<temperature class_name="t22" color="F8F1C8">+21</temperature>
 			<time_zone>Asia/Almaty</time_zone>
 			<observation_time>03:00</observation_time>
 			<observation>2016-08-01T03:00:00</observation>

@@ -2,22 +2,22 @@
 # Author: Yevgeniy Goncharov aka xck, http://sys-adm.in
 # Get weather from yandex
 
-# Telegram Data
-CHATID="<ID>"
-KEY="<KEY>"
+# Telegram settings
+# CHATID="<ID>"
+# KEY="<TOKEN>"
 
 # Get yandex weather xml
 curl -s https://export.yandex.ru/bar/reginfo.xml?region=Almaty > ya.xml && sed -i -n '/<day_part typeid=/,/<\/day_part>/p' ya.xml
 
-# Get weather types
-TYPE=$(cat ya.xml | grep weather_type | sed -e 's/<[^>]*>//g')
-TEMP=$(cat ya.xml | grep temperature | sed -e 's/<[^>]*>//g' | head -1)
-CITY=$(cat ya.xml | grep time_zone | sed -e 's/<[^>]*>//g')
+getdata() {
+	res=$(cat ya.xml | grep $1 | sed -e 's/<[^>]*>//g' | head -1 | tr -s " ")
+	echo $res
+}
 
-# Remove spaces
-RESULT=$(echo "$CITY $TYPE $TEMP°" | tr -s " ")
+TYPE=$(getdata weather_type)
+TEMP=$(getdata temperature)
+CITY=$(getdata time_zone)
 
-# Data to screen
-# echo $RESULT
+echo "$CITY $TYPE $TEMP°"
 
-curl -s --max-time 10 -d "chat_id=$CHATID&disable_web_page_preview=1&text=$RESULT" https://api.telegram.org/bot$KEY/sendMessage >/dev/null
+# curl -s --max-time 10 -d "chat_id=$CHATID&disable_web_page_preview=1&text=$RESULT" https://api.telegram.org/bot$KEY/sendMessage >/dev/null
