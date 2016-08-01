@@ -1,0 +1,26 @@
+		<day_part typeid="1" type="утро">
+			<weather_type>переменная облачность</weather_type>
+			<weather_code>partly-cloudy</weather_code>
+			<image>https://yastatic.net/weather/i/icons/blueye/24/bkn_d.png</image>
+			<image-v2 size="22x22">http://yandex.st/weather/v-1/i/icons/22x22/bkn_d_+18.png</image-v2>
+			<image-v3 size="48">https://yastatic.net/weather/i/icons/blueye/48/bkn_d.png</image-v3>
+			<image_number></image_number>
+			<wind_speed>1</wind_speed>
+			<wind_direction id="n">север</wind_direction>
+			<dampness>60</dampness>
+			<hectopascal>919</hectopascal>
+			<torr>689</torr>
+			<pressure>689</pressure>
+			<temperature class_name="t18" color="F7F3D3">+18</temperature>
+			<time_zone>Asia/Almaty</time_zone>
+			<observation_time>03:30</observation_time>
+			<observation>2016-08-01T03:30:00</observation>
+		</day_part>
+		<day_part typeid="1" type="утро">
+			<image-v2 size="22x22">http://yandex.st/weather/v-1/i/icons/22x22/skc_d_+24.png</image-v2>
+			<image-v3 size="30">https://yastatic.net/weather/i/icons/blueye/30/skc_d.png</image-v3>
+			
+			<temperature_from class_name="t16" color="F6F3D6">+15</temperature_from>
+			<temperature_to class_name="t24" color="F9EEC0">+24</temperature_to>
+		
+		</day_part>
